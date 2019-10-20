@@ -50,7 +50,10 @@ spec:
         env:
         - name: WORDPRESS_DB_HOST
           value: "wordpress.cthkgfp8h6jq.us-east-1.rds.amazonaws.com"
-          #this should be the output of database stack
+        - name: WORDPRESS_DB_USER
+          value: "wordpress"
+        - name: WORDPRESS_DB_NAME
+          value: "wordpress"
         - name: WORDPRESS_DB_PASSWORD
           value: "1234qwer"
           #          valueFrom:
