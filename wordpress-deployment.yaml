@@ -49,13 +49,14 @@ spec:
         name: wordpress
         env:
         - name: WORDPRESS_DB_HOST
-          value: someurl
+          value: "wordpress.cthkgfp8h6jq.us-east-1.rds.amazonaws.com"
           #this should be the output of database stack
         - name: WORDPRESS_DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
+          value: "1234qwer"
+          #          valueFrom:
+          #            secretKeyRef:
+          #              name: mysql-pass
+          #              key: password
         ports:
         - containerPort: 80
           name: wordpress
