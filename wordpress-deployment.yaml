@@ -36,7 +36,7 @@ spec:
   selector:
     matchLabels:
       app: wordpress
-  replicas: 2
+  replicas: 1
   strategy:
     type: RollingUpdate
   template:
@@ -55,11 +55,10 @@ spec:
         - name: WORDPRESS_DB_NAME
           value: "wordpress"
         - name: WORDPRESS_DB_PASSWORD
-          value: "1234qwer"
-          #          valueFrom:
-          #            secretKeyRef:
-          #              name: mysql-pass
-          #              key: password
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
         ports:
         - containerPort: 80
           name: wordpress
